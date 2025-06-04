@@ -23,6 +23,7 @@ interface Borrowing {
 
 let books:Book[]=[];
 let members:Member[]=[];
+let issued:Borrowing[]=[];
 function newbook():void{
     const Bid=document.getElementById('identity') as HTMLInputElement;
     const Btitle=document.getElementById('title') as HTMLInputElement;
@@ -151,3 +152,62 @@ function loadmember():void{
     }
 }
 loadmember();
+
+// managing borrowing of books
+class borrowing{
+    private issue:Map<number,number[]>=new Map()
+    
+    issueBooks():void{
+        
+        const borrowid=document.getElementById('borowid2')as HTMLInputElement;
+        const mid=document.getElementById('memberId')as HTMLInputElement;
+        const bid=document.getElementById('bookId')as HTMLInputElement;
+        const bD=document.getElementById('borrowDate')as HTMLInputElement;
+        const dD=document.getElementById('dueDate')as HTMLInputElement;
+        const rD=document.getElementById('returnDate')as HTMLInputElement;
+
+        const id=parseInt(borrowid.value);
+        const memberId=parseInt(mid.value);
+        const bookId=parseInt(bid.value);
+        const borrowDate=bD.value;
+        const dueDate=dD.value;
+        const returnDate=rD.value;
+        const issue:Borrowing={id,memberId,bookId,borrowDate,dueDate,returnDate}
+        issued.push(issue)
+        console.log(issue);
+        
+    }
+    updateborrowing():void{
+        const borrowid=document.getElementById('borowid2')as HTMLInputElement;
+        const mid=document.getElementById('memberId')as HTMLInputElement;
+        const bid=document.getElementById('bookId')as HTMLInputElement;
+        const bD=document.getElementById('borrowDate')as HTMLInputElement;
+        const dD=document.getElementById('dueDate')as HTMLInputElement;
+        const rD=document.getElementById('returnDate')as HTMLInputElement;
+
+        const id=parseInt(borrowid.value);
+        const memberId=parseInt(mid.value);
+        const bookId=parseInt(bid.value);
+        const borrowDate=bD.value;
+        const dueDate=dD.value;
+        const returnDate=rD.value;
+        const issue=issued.find(issue=>issue.id===id)
+        if(issue){
+            issue.memberId=memberId;
+            issue.bookId=bookId;
+            issue.borrowDate=borrowDate;
+            issue.dueDate=dueDate;
+            issue.returnDate=returnDate;
+            console.log(issue);
+            
+        }
+    }
+}
+const assign=new borrowing();
+// const issueButton = document.getElementById('issue')as HTMLButtonElement;
+// if (issueButton) {
+//     issueButton.addEventListener('click', function () {
+       assign.issueBooks();
+       assign.updateborrowing();
+//     });
+// }
