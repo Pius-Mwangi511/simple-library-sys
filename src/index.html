@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple library management system</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            background-color: rgb(80, 80, 104);
+        }
+        .container{
+            width: 700px;
+            background-color: rgb(24, 24, 59);
+            border-radius: 10px;
+            height: 750px;
+            color: white;
+        }
+        .books,.members{
+            display: flex;
+            justify-content: center;
+        }
+        input{
+            margin-top: 10px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            width: 250px;
+            height: 20px;
+        }
+        .info{
+            display: flex;
+            justify-content: center;
+
+        }
+        .members{
+            margin-left: 40px;
+        }
+        .head{
+            display: flex;
+            justify-content: center;
+        }
+        button{
+            margin-top: 20px;
+            background-color: rgb(80, 80, 104);
+            color: white;
+        }
+        .inputs{
+            display: flex;
+            justify-content: center;
+        }
+        .userhead{
+            display: flex;
+            justify-content: center;
+        }
+        .but{
+            display: flex;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <h1>Library Management Dashboard</h1>
+        </div>
+        <div class="info">
+        <div class="books">
+        <form action="" id="books">
+            <div class="bhead">
+                <h1>Books</h1>
+            </div>
+            <label for="id">identity</label><br>
+            <input type="text" placeholder="identity" id="identity"><br>
+            <label for="id">title</label><br>
+            <input type="text" placeholder="book title" id="title"><br>
+            <label for="id">author</label><br>
+            <input type="text" placeholder="book author" id="author"><br>
+            <label for="id">available</label><br>
+            <input type="text" placeholder="available" id="available"><br>
+            <button onclick="newbook()" >create</button>
+            <button onclick="updatebook()">update</button>
+            <button onclick="deletebook()" >delete</button>
+            <button>getbooks</button>
+        </form><br><br>
+    </div>
+    <div class="members">
+        <form action="" id="members">
+            <div class="userhead">
+                <h1>Members</h1>
+            </div>
+            <label for="Uid">identity</label><br>
+            <input type="text" placeholder="identity" id="identity2"><br>
+            <label for="username">username</label><br>
+            <input type="text" placeholder="username" id="username"><br>
+            <label for="email">email</label><br>
+            <input type="text" placeholder="email" id="email"><br>
+            <label for="phoneNo">phoneNo</label><br>
+            <input type="text" placeholder="phoneNo" id="phoneNo"><br>
+            <button onclick="createMember()" >create</button>
+            <button onclick="updateMember()">update</button>
+            <button onclick="deleteMember()">delete</button>
+            <button>getbooks</button>
+
+        </form>
+    </div>
+    
+    </div>
+    <div class="assignbooks">
+        <form action="" id="assignbooks">
+            <div class="userhead">
+                <h1>borrowBooks</h1>
+            </div>
+            <div class="inputs">
+                <div class="a">
+            <label for="borrowid">identity</label><br>
+            <input type="text" placeholder="identity" id="borowid2"><br>
+            <label for="memberid">memberid</label><br>
+            <input type="text" placeholder=" memberId" id=" memberId"><br>
+            <label for="bookId">bookId</label><br>
+            <input type="text" placeholder="bookId" id="bookId"><br>
+            </div>
+            <div class="b">
+            <label for="borrowDate">borrowDate</label><br>
+            <input type="text" placeholder="borrowDate" id="borrowDate"><br>
+            <label for="dueDate">dueDate</label><br>
+            <input type="text" placeholder="dueDate" id="dueDate"><br>
+            <label for="returnDate">returnDate</label><br>
+            <input type="text" placeholder="returnDate" id="returnDate"><br>
+            </div>
+           </div>
+           <div class="but">
+            <button onclick="" >issue</button>
+            <button onclick="">update</button>
+            <button onclick="">delete</button>
+            <button>getbooks</button>
+        </div>
+        </form>
+    </div>
+    </div>
+    <script src="../dist/index.js"></script>
+</body>
+</html>
